@@ -8,18 +8,19 @@ import java.awt.event.ActionListener;
 
 public class Test implements ActionListener{
 
+    private  JFrame f;
+    private MyPanel p;
     private com.netcracker.part2.Container container;
     private Ball ball;
+
     public Test(com.netcracker.part2.Container container, Ball ball){
         this.container = container;
         this.ball = ball;
         Timer timer = new Timer(2000,this);
         timer.setDelay(45);
         timer.start();
-
     }
-    JFrame f;
-    MyPanel p;
+
     public void createAndShow(){
         f = new JFrame();
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -32,7 +33,6 @@ public class Test implements ActionListener{
         f.setSize(500,500);
         f.setVisible(true);
     }
-
 
     @Override
     public void actionPerformed(ActionEvent e) {

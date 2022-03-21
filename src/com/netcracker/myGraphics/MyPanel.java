@@ -18,16 +18,13 @@ public class MyPanel extends JPanel{
     }
 
     @Override
-    public void paintComponent(Graphics g){
+    public void paintComponent(Graphics g) {
         super.paintComponent(g);
         Graphics2D g2 = (Graphics2D) g;
         g2.setColor(Color.black);
         g2.drawRect(container.getX(), container.getY(), container.getWidth(),
                 container.getHeight());
         g2.setColor(Color.DARK_GRAY);
-        g2.fillOval((int)ball.getX(), (int) ball.getY(), ball.getRadius(), ball.getRadius());
-  }
-
-
-
+        g2.fillOval((int) ball.getX(), (int) ball.getY(), ball.getRadius(), ball.getRadius());
+    }
 }

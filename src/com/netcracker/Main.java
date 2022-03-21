@@ -130,13 +130,8 @@ public class Main {
         ball.move();
         System.out.println(ball);
         System.out.println(container.collides(ball));*/
-
         Test t = new Test(container, ball);
         t.createAndShow();
-
-
-
     }
-
 }
 
