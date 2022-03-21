@@ -1,5 +1,6 @@
 package com.netcracker.part2;
 
+import static java.lang.Double.compare;
 public class MyComplex {
     private double real = 0.0;
     private double imag = 0.0;
@@ -43,27 +44,19 @@ public class MyComplex {
     }
 
     public boolean isReal() {
-        if (real == 0.0)
-            return false;
-        return true;
+        return  (imag == 0.0);
     }
 
     public boolean isImaginary() {
-        if (imag == 0.0)
-            return false;
-        return true;
+        return real == 0.0 && imag != 0.0;
     }
 
     public boolean equals(double real, double imag) {
-        if (this.imag == imag && this.real == real)
-            return true;
-        return false;
+        return (compare(this.real,real)==0) && (compare(this.imag, imag)==0);
     }
 
     public boolean equals(MyComplex another) {
-        if (this.imag == another.imag && this.real == another.real)
-            return true;
-        return false;
+        return (compare(this.real, another.getReal())==0) && (compare(this.imag, another.getImag())==0);
     }
 
     public double magnitude() {

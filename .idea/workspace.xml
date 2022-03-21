@@ -33,7 +33,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../helloWorldApp/src/com/netcracker/figures/Circle.java" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -66,7 +66,8 @@
       <workItem from="1647675433755" duration="9601000" />
       <workItem from="1647796105997" duration="12482000" />
       <workItem from="1647854269615" duration="17937000" />
-      <workItem from="1647875577576" duration="49000" />
+      <workItem from="1647875577576" duration="1739000" />
+      <workItem from="1647879098856" duration="1417000" />
     </task>
     <servers />
   </component>
