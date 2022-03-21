@@ -30,21 +30,6 @@ public class MyPolynomial {
             return polynomial;
         polynomial += coeffs[0];
         return polynomial;
-        /*String polynomial = new String();
-        int deg = this.getDegree();
-        boolean flag = false;
-        for(int i=deg; i>=0; i--) {
-            if (coeffs[i] != 0 && i!=0) {
-                polynomial += coeffs[i] + "x^" + i;
-                flag = true;
-            }
-            if (coeffs[i - 1] > 0 && coeffs[i] != 0)
-                polynomial += "+";
-        }
-        if (coeffs[0] == 0 && flag)
-            return polynomial;
-        polynomial += coeffs[0];
-        return polynomial;*/
     }
 
     public double evaluate(double x) {
