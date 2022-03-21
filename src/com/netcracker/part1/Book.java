@@ -1,4 +1,4 @@
-package com.netcracker.firstPart;
+package com.netcracker.part1;
 
 import java.util.Arrays;
 

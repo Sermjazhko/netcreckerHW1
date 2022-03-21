@@ -1,4 +1,4 @@
-package com.netcracker.firstPart;
+package com.netcracker.part1;
 
 public class Circle {
     private double radius = 1.0;

@@ -1,4 +1,4 @@
-package com.netcracker.firstPart;
+package com.netcracker.part1;
 
 public class MyTriangle {
     private MyPoint v1;
