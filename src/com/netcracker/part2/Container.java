@@ -10,7 +10,7 @@ public class Container {
         this.x1 = x;
         this.y1 = y;
         this.x2 = x + width;
-        this.y2 = y - height;
+        this.y2 = y + height;
     }
 
     public int getX() {
@@ -26,16 +26,15 @@ public class Container {
     }
 
     public int getHeight() {
-        return y1 - y2;
+        return y2 - y1;
     }
 
     public boolean collides(Ball ball) {
         float right = ball.getX() + ball.getRadius();
-        float left = ball.getX() - ball.getRadius();
-        float top = ball.getY() + ball.getRadius();
-        float bottom = ball.getY() - ball.getRadius();
-
-        return (right < x2 && left > x1 && top < y1 && bottom >y2);
+        float left = ball.getX() ;
+        float top = ball.getY() ;
+        float bottom = ball.getY() + ball.getRadius();
+        return (right < x2 && left > x1 && top > y1 && bottom < y2);
     }
 
     @Override

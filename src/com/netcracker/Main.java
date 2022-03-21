@@ -1,5 +1,6 @@
 package com.netcracker;
 
+import com.netcracker.myGraphics.Test;
 import com.netcracker.part1.*;
 import com.netcracker.part2.Ball;
 import com.netcracker.part2.Container;
@@ -108,9 +109,9 @@ public class Main {
 
 
 //    Проверка для Ball и Container
-        Container container = new Container(0, 5, 5, 5);
-        Ball ball = new Ball(2, 2, 1, 1, 45);
-
+        Container container = new Container(30, 30, 300, 300);
+        Ball ball = new Ball(100, 100, 20, 4, 45);
+/*
         System.out.println(container);
         System.out.println(ball);
         System.out.println(container.collides(ball));
@@ -125,12 +126,13 @@ public class Main {
         System.out.println(ball);
         System.out.println(container.collides(ball));
         ball.reflectHorizontal();
-       
+
         ball.move();
         System.out.println(ball);
-        System.out.println(container.collides(ball));
+        System.out.println(container.collides(ball));*/
 
-
+        Test t = new Test(container, ball);
+        t.createAndShow();
 
 
 
