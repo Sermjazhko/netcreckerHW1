@@ -1,5 +1,7 @@
 package com.netcracker.part1;
 
+import java.util.Objects;
+
 public class Rectangle {
 
     private float length = 1.0f;
@@ -42,5 +44,23 @@ public class Rectangle {
                 "length=" + length +
                 ", width=" + width +
                 ']';
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Rectangle rectangle = (Rectangle) obj;
+        return Float.compare(rectangle.length, length) == 0 && Float.compare(rectangle.width, width) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        int result=17;
+
+        result = 31*result + Float.floatToIntBits(length);
+        result = 31*result + Float.floatToIntBits(width);
+
+        return result;
     }
 }

@@ -1,5 +1,7 @@
 package com.netcracker.part1;
 
+import java.util.Objects;
+
 public class MyPoint {
     private int x = 0;
     private int y = 0;
@@ -56,5 +58,23 @@ public class MyPoint {
 
     public double distance(){
         return Math.sqrt(Math.pow(this.y,2) + Math.pow(this.x,2));
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        MyPoint myPoint = (MyPoint) obj;
+        return x == myPoint.x && y == myPoint.y;
+    }
+
+    @Override
+    public int hashCode() {
+        int result=17;
+
+        result = 31*result + x;
+        result = 31*result + y;
+
+        return result;
     }
 }

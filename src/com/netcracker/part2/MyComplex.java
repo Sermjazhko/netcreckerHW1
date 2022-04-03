@@ -1,6 +1,10 @@
 package com.netcracker.part2;
 
+import java.util.Objects;
+
 import static java.lang.Double.compare;
+import static java.lang.Double.doubleToLongBits;
+
 public class MyComplex {
     private double real = 0.0;
     private double imag = 0.0;
@@ -108,4 +112,27 @@ public class MyComplex {
         return new MyComplex(real, -imag);
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+
+        if (obj == null || getClass() != obj.getClass()) return false;
+
+        MyComplex myComplex = (MyComplex) obj;
+
+        return compare(myComplex.real, real) == 0 && compare(myComplex.imag, imag) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = 17;
+        long realL = Double.doubleToLongBits(real);
+        long imagL = Double.doubleToLongBits(imag);
+        // либо вывести, либо побитовый сдвиг, XOR
+        result = result*31 + (int) (realL ^ realL >>> 32);
+
+        result = result*31 + (int) (imagL ^ imagL >>> 32);
+
+        return result;
+    }
 }

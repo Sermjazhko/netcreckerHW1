@@ -1,5 +1,7 @@
 package com.netcracker.part2;
 
+import java.util.Objects;
+
 public class Ball {
     private float x;
     private float y;
@@ -78,5 +80,26 @@ public class Ball {
                 "speed=(" + xDelta +
                 "," + yDelta +
                 ")]";
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Ball ball = (Ball) obj;
+        return Float.compare(ball.x, x) == 0 && Float.compare(ball.y, y) == 0 && radius == ball.radius && Float.compare(ball.xDelta, xDelta) == 0 && Float.compare(ball.yDelta, yDelta) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = 17;
+
+        result = result*31 + Float.floatToIntBits(x);
+        result = result*31 + Float.floatToIntBits(y);
+        result = result*31 + radius;
+        result = result*31 + Float.floatToIntBits(xDelta);
+        result = result*31 + Float.floatToIntBits(yDelta);
+
+        return result;
     }
 }

@@ -1,5 +1,7 @@
 package com.netcracker.part2;
 
+import java.util.Objects;
+
 public class Container {
     private int x1;
     private int y1;
@@ -41,4 +43,22 @@ public class Container {
     public String toString() {
         return "Container[(" + x1 + "," + y1 + "),(" + x2 + "," + y2 + ")]";
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Container container = (Container) obj;
+        return x1 == container.x1 && y1 == container.y1 && x2 == container.x2 && y2 == container.y2;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = 17;
+        result = result*31 +x1;
+        result = result*31 +x2;
+        result = result*31 +y1;
+        result = result*31 +y2;
+
+        return result;    }
 }

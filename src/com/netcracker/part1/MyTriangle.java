@@ -1,5 +1,7 @@
 package com.netcracker.part1;
 
+import java.util.Objects;
+
 public class MyTriangle {
     private MyPoint v1;
     private MyPoint v2;
@@ -38,5 +40,24 @@ public class MyTriangle {
         else if (flag1 || flag2 || flag3)
             return "Isosceles";
         return "Scalene";
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        MyTriangle myTriangle = (MyTriangle) obj;
+        return this.v1.equals(myTriangle.v1) && this.v2.equals(myTriangle.v2) && this.v3.equals(myTriangle.v3);
+    }
+
+    @Override
+    public int hashCode() {
+        int result=17;
+
+        result = 31*result + v1.hashCode();
+        result = 31*result + v2.hashCode();
+        result = 31*result + v3.hashCode();
+
+        return result;
     }
 }

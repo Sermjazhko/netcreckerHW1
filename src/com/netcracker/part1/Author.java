@@ -1,5 +1,7 @@
 package com.netcracker.part1;
 
+import java.util.Objects;
+
 public class Author {
     private String name;
     private String email;
@@ -32,5 +34,25 @@ public class Author {
                 ", email='" + email +
                 ", gender=" + gender +
                 ']';
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Author author = (Author) obj;
+
+        return gender == author.gender && this.name.equals(author.name) && this.email.equals(author.email);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = 17;
+
+        result = result*31 + name.hashCode();
+        result = result*31 + email.hashCode();
+        result = result*31 + (int)gender;
+
+        return result;
     }
 }

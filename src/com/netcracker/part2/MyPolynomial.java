@@ -60,4 +60,30 @@ public class MyPolynomial {
                 arr[j+i] += coeffs[i] * right.coeffs[j];
         return new MyPolynomial(arr);
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        MyPolynomial myPolynomial = (MyPolynomial) obj;
+
+        if (coeffs.length != myPolynomial.coeffs.length) return false;
+
+        for (int i = 0; i<coeffs.length; i++)
+            if (Double.compare(coeffs[i], myPolynomial.coeffs[i]) != 0)
+                return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = 17;
+        long t;
+        // либо вывести, либо побитовый сдвиг, XOR
+        for (double c: coeffs) {
+            t = Double.doubleToLongBits(c);
+            result = result * 31 + (int) (t ^ t >>> 32);
+        }
+        return result;
+    }
 }
